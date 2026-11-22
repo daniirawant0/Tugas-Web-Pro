@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tips &amp; Perawatan - Sparkleen Laundry | Jasa Laundry Kilat</title>
+  <meta name="description" content="Kumpulan tips perawatan pakaian dari tim profesional Sparkleen Laundry: pemilahan warna, membaca label perawatan, suhu air, perawatan bahan khusus, hingga cara menyimpan pakaian yang benar.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a67d6'/%3E%3Cg fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='13' y='13' width='38' height='38' rx='6'/%3E%3Ccircle cx='32' cy='37' r='9'/%3E%3Ccircle cx='21' cy='21' r='2' fill='white' stroke='none'/%3E%3C/g%3E%3C/svg%3E">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("sparkleen-theme"); } catch (e) {}
+      if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      document.documentElement.classList.add("js");
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/reicon/cdn/reicon.js"></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#konten">Langsung ke konten utama</a>
+
+  <!-- ============ LATAR DITHER PIKSEL (inspirasi andreas.vision) ============ -->
+  <div class="page-bg" aria-hidden="true">
+    <div class="pg-cloud pg-cloud-1"></div>
+    <div class="pg-cloud pg-cloud-2"></div>
+    <div class="pg-dither pg-dither-halus"></div>
+    <div class="pg-dither pg-dither-kasar"></div>
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar" id="navbar" aria-label="Navigasi utama">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Sparkleen Laundry — kembali ke beranda">
+        <span class="logo-mark" aria-hidden="true"><re-icon icon="washer" size="20" color="currentColor"></re-icon></span>
+        Sparkleen<span class="logo-accent">Laundry</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="layanan.html">Layanan</a></li>
+        <li><a href="tentang.html">Tentang Kami</a></li>
+        <li><a href="tips.html" class="aktif" aria-current="page">Tips &amp; Perawatan</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="pemesanan.html">Form Pemesanan</a></li>
+        <li><a href="daftar_pesanan.php">Daftar Pesanan</a></li>
+      </ul>
+      <div class="nav-actions">
+        <span class="status-pill nav-status" id="statusPill" aria-live="polite"></span>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Ganti mode terang/gelap">
+          <re-icon class="ico-moon" icon="moon" size="16" color="currentColor" aria-hidden="true"></re-icon>
+          <re-icon class="ico-sun" icon="sun" size="16" color="currentColor" aria-hidden="true"></re-icon>
+        </button>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ MENU MOBILE ============ -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Menu navigasi mobile">
+      <ul>
+        <li><a href="index.html"><span class="no">01</span> Beranda</a></li>
+        <li><a href="layanan.html"><span class="no">02</span> Layanan</a></li>
+        <li><a href="tentang.html"><span class="no">03</span> Tentang Kami</a></li>
+        <li><a href="tips.html"><span class="no">04</span> Tips &amp; Perawatan</a></li>
+        <li><a href="kontak.html"><span class="no">05</span> Kontak</a></li>
+        <li><a href="pemesanan.html"><span class="no">06</span> Form Pemesanan</a></li>
+        <li><a href="daftar_pesanan.php"><span class="no">07</span> Daftar Pesanan</a></li>
+      </ul>
+    </nav>
+    <div class="mm-footer">
+      <span class="status-pill" id="statusPillMobile" aria-live="polite"></span>
+      <p>Jasa laundry kilat, bersih, dan terpercaya untuk kebutuhan pakaian Anda sehari-hari.</p>
+    </div>
+  </div>
+
+  <main id="konten">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero alt">
+    <div class="hero-inner">
+      <h1>Tips &amp; <span class="grad">Perawatan</span> Pakaian</h1>
+      <p class="subjudul">Kumpulan panduan praktis dari para ahli Sparkleen Laundry agar pakaian kesayangan Anda selalu awet, bersih, dan nyaman dipakai.</p>
+    </div>
+  </header>
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" aria-labelledby="jdIntro" style="padding-bottom: 0;">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="badge">Artikel Panduan</span>
+        <h2 id="jdIntro">Rahasia Pakaian Awet dari Tim Kami</h2>
+        <p class="deskripsi">
+          Pakaian yang dirawat dengan benar akan bertahan bertahun-tahun, sedangkan pakaian yang salah perlakuan bisa rusak hanya dalam beberapa kali pencucian. Selama bertahun-tahun menangani puluhan ribu kilogram pakaian, tim Sparkleen Laundry mengumpulkan banyak pengalaman tentang apa yang membuat kain cepat rusak dan bagaimana cara mencegahnya. Pada halaman ini kami membagikan delapan tips terbaik yang paling sering kami rekomendasikan kepada pelanggan. Semua kartu tips di bawah dimuat secara dinamis oleh JavaScript, sehingga Anda bisa mencari kata kunci, menyaring kategori, atau meminta satu tips acak untuk dibaca — cobalah fitur pencariannya!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIPS DINAMIS ============ -->
+  <section class="section" aria-label="Daftar tips perawatan pakaian" style="padding-top: clamp(28px, 4vw, 44px);">
+    <div class="container">
+      <div class="tips-tools reveal">
+        <div class="pencarian">
+          <span class="search-ico" aria-hidden="true">
+            <re-icon icon="search-normal" size="18" color="currentColor" aria-hidden="true"></re-icon>
+          </span>
+          <label for="cariTips" class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">Cari tips</label>
+          <input class="input" type="search" id="cariTips" placeholder="Cari tips… misalnya: deterjen, wol, noda" autocomplete="off">
+          <button type="button" class="clear-btn" id="clearTips" aria-label="Hapus kata pencarian">
+            <re-icon icon="close-circle" size="15" color="currentColor" aria-hidden="true"></re-icon>
+          </button>
+        </div>
+
+        <div class="tips-chips" role="group" aria-label="Filter kategori tips">
+          <button type="button" class="chip on" data-filter="semua" aria-pressed="true">Semua</button>
+          <button type="button" class="chip" data-filter="pemilahan" aria-pressed="false">Pemilahan</button>
+          <button type="button" class="chip" data-filter="perawatan" aria-pressed="false">Perawatan</button>
+          <button type="button" class="chip" data-filter="praktik" aria-pressed="false">Praktik Cuci</button>
+          <button type="button" class="chip" data-filter="penyimpanan" aria-pressed="false">Penyimpanan</button>
+        </div>
+
+        <button type="button" class="btn btn-ghost btn-sm" id="tipsAcak"><re-icon icon="shuffle3" size="14" color="currentColor"></re-icon>Tips Acak</button>
+      </div>
+
+      <p class="tips-count" id="tipsCount" style="text-align:center; margin-bottom: 26px;" aria-live="polite"></p>
+
+      <div class="grid-tips" id="gridTips"></div>
+
+      <div class="kosong-state" id="tipsKosong">
+        <div class="ikon" aria-hidden="true"><re-icon icon="search-normal" size="36" color="currentColor"></re-icon></div>
+        <h3>Tidak ada tips yang cocok</h3>
+        <p>Coba gunakan kata kunci lain, atau setel ulang filter untuk melihat seluruh tips kami.</p>
+        <button type="button" class="btn btn-ghost btn-sm" id="resetTips">Setel Ulang Filter</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PENUTUP ============ -->
+  <section class="section section-alt" aria-labelledby="jdPenutupTips">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="badge">Kesimpulan</span>
+        <h2 id="jdPenutupTips">Masih Ragu? Serahkan Saja ke Kami</h2>
+        <p class="deskripsi">
+          Kami memahami bahwa menerapkan semua tips di atas membutuhkan waktu dan ketelitian yang tidak semua orang miliki. Tidak apa-apa, karena justru di situlah kami berada. Sparkleen Laundry siap menangani seluruh proses perawatan pakaian Anda dengan prosedur yang benar, peralatan yang layak, dan tim yang berpengalaman. Anda cukup menghubungi kami, menentukan jadwal penjemputan, dan menerima pakaian yang bersih, wangi, serta tertata rapi tanpa harus memikirkan satu pun tips di atas. Baca juga halaman layanan kami untuk mengetahui paket yang paling sesuai dengan kebutuhan, atau langsung menuju halaman kontak untuk memesan penjemputan pertama Anda hari ini juga.
+        </p>
+        <div style="margin-top: 28px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="layanan.html" class="btn btn-primary">Lihat Paket Layanan</a>
+          <a href="kontak.html" class="btn btn-ghost">Pesan Penjemputan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo"><span class="logo-mark" aria-hidden="true"><re-icon icon="washer" size="20" color="currentColor"></re-icon></span> Sparkleen<span class="logo-accent">Laundry</span></div>
+      <p>Jasa laundry kilat, bersih, dan terpercaya untuk kebutuhan pakaian Anda sehari-hari.</p>
+      <nav class="footer-nav" aria-label="Navigasi footer">
+        <a href="index.html">Beranda</a>
+        <a href="layanan.html">Layanan</a>
+        <a href="tentang.html">Tentang Kami</a>
+        <a href="tips.html">Tips &amp; Perawatan</a>
+        <a href="kontak.html">Kontak</a>
+        <a href="pemesanan.html">Form Pemesanan</a>
+        <a href="daftar_pesanan.php">Daftar Pesanan</a>
+      </nav>
+      <p class="copyright">&copy; <span id="tahunFooter">2026</span> Sparkleen Laundry — Tugas 2 Web Programming (Konten Dinamis) | Kelompok Ganjil — TI C</p>
+    </div>
+  </footer>
+
+  <button type="button" class="to-top" id="toTop" aria-label="Kembali ke atas halaman">
+    <re-icon icon="arrow-up" size="17" color="currentColor" aria-hidden="true"></re-icon>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan - Sparkleen Laundry | Jasa Laundry Kilat</title>
+  <meta name="description" content="Paket layanan dan daftar harga Sparkleen Laundry: cuci kering setrika, laundry kilat 6 jam, dry clean, cuci sepatu &amp; tas, karpet dan bed cover, lengkap dengan kalkulator estimasi harga online.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a67d6'/%3E%3Cg fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='13' y='13' width='38' height='38' rx='6'/%3E%3Ccircle cx='32' cy='37' r='9'/%3E%3Ccircle cx='21' cy='21' r='2' fill='white' stroke='none'/%3E%3C/g%3E%3C/svg%3E">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("sparkleen-theme"); } catch (e) {}
+      if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      document.documentElement.classList.add("js");
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/reicon/cdn/reicon.js"></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#konten">Langsung ke konten utama</a>
+
+  <!-- ============ LATAR DITHER PIKSEL (inspirasi andreas.vision) ============ -->
+  <div class="page-bg" aria-hidden="true">
+    <div class="pg-cloud pg-cloud-1"></div>
+    <div class="pg-cloud pg-cloud-2"></div>
+    <div class="pg-dither pg-dither-halus"></div>
+    <div class="pg-dither pg-dither-kasar"></div>
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar" id="navbar" aria-label="Navigasi utama">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Sparkleen Laundry — kembali ke beranda">
+        <span class="logo-mark" aria-hidden="true"><re-icon icon="washer" size="20" color="currentColor"></re-icon></span>
+        Sparkleen<span class="logo-accent">Laundry</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="layanan.html" class="aktif" aria-current="page">Layanan</a></li>
+        <li><a href="tentang.html">Tentang Kami</a></li>
+        <li><a href="tips.html">Tips &amp; Perawatan</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="pemesanan.html">Form Pemesanan</a></li>
+        <li><a href="daftar_pesanan.php">Daftar Pesanan</a></li>
+      </ul>
+      <div class="nav-actions">
+        <span class="status-pill nav-status" id="statusPill" aria-live="polite"></span>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Ganti mode terang/gelap">
+          <re-icon class="ico-moon" icon="moon" size="16" color="currentColor" aria-hidden="true"></re-icon>
+          <re-icon class="ico-sun" icon="sun" size="16" color="currentColor" aria-hidden="true"></re-icon>
+        </button>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ MENU MOBILE ============ -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Menu navigasi mobile">
+      <ul>
+        <li><a href="index.html"><span class="no">01</span> Beranda</a></li>
+        <li><a href="layanan.html"><span class="no">02</span> Layanan</a></li>
+        <li><a href="tentang.html"><span class="no">03</span> Tentang Kami</a></li>
+        <li><a href="tips.html"><span class="no">04</span> Tips &amp; Perawatan</a></li>
+        <li><a href="kontak.html"><span class="no">05</span> Kontak</a></li>
+        <li><a href="pemesanan.html"><span class="no">06</span> Form Pemesanan</a></li>
+        <li><a href="daftar_pesanan.php"><span class="no">07</span> Daftar Pesanan</a></li>
+      </ul>
+    </nav>
+    <div class="mm-footer">
+      <span class="status-pill" id="statusPillMobile" aria-live="polite"></span>
+      <p>Jasa laundry kilat, bersih, dan terpercaya untuk kebutuhan pakaian Anda sehari-hari.</p>
+    </div>
+  </div>
+
+  <main id="konten">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero alt">
+    <div class="hero-inner">
+      <h1>Layanan <span class="grad">Kami</span></h1>
+      <p class="subjudul">Beragam pilihan layanan pencucian profesional yang disesuaikan dengan jenis kain, kebutuhan waktu, dan anggaran Anda.</p>
+    </div>
+  </header>
+
+  <!-- ============ DAFTAR LAYANAN + FILTER DINAMIS ============ -->
+  <section class="section" aria-labelledby="jdPaket">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="badge">Pilihan Terlengkap</span>
+        <h2 id="jdPaket">Paket Layanan Sparkleen Laundry</h2>
+        <p class="deskripsi">
+          Sparkleen Laundry menyediakan enam layanan utama yang dirancang untuk memenuhi berbagai kebutuhan perawatan pakaian dan tekstil rumah tangga. Setiap layanan dikerjakan dengan prosedur standar yang sama ketatnya: pemeriksaan awal kondisi pakaian, pemilahan berdasarkan jenis kain, pencucian dengan deterjen pilihan, pengeringan pada suhu yang tepat, penyetrikaan rapi, serta pengemasan higienis sebelum dikembalikan kepada pelanggan. Kami percaya bahwa layanan laundry bukan sekadar memindahkan kotoran dari kain, melainkan menjaga investasi pakaian Anda agar tetap awet, warnanya tetap cerah, dan bentuknya tetap terjaga. Gunakan tombol filter di bawah untuk menyaring layanan berdasarkan cara perhitungan harganya.
+        </p>
+      </div>
+
+      <div class="tips-chips chips-layanan reveal" role="group" aria-label="Filter layanan berdasarkan satuan harga">
+        <button type="button" class="chip on" data-filter="semua" aria-pressed="true">Semua</button>
+        <button type="button" class="chip" data-filter="kg" aria-pressed="false">Harga per Kg</button>
+        <button type="button" class="chip" data-filter="pcs" aria-pressed="false">Harga per Pcs</button>
+        <button type="button" class="chip" data-filter="gratis" aria-pressed="false">Gratis</button>
+      </div>
+      <p class="tips-count reveal" id="layananCount" style="text-align:center; margin: 14px 0 30px;" aria-live="polite">Menampilkan 6 dari 6 layanan.</p>
+
+      <div class="grid-card" id="gridLayanan">
+        <div class="card reveal" data-kategori="kg" style="--d:0s">
+          <div class="ikon tile-1" aria-hidden="true"><re-icon icon="washer2" size="20" color="currentColor"></re-icon></div>
+          <h3>Cuci Kering Setrika (Reguler)</h3>
+          <p>Layanan paling favorit untuk kebutuhan harian. Pakaian dicuci bersih, dikeringkan dengan mesin, disetrika rapi, lalu dikemas dalam plastik higienis. Waktu pengerjaan dua hari kerja dengan hasil selalu memuaskan.</p>
+          <span class="harga-chip">Rp6.000 / kg</span>
+        </div>
+        <div class="card reveal" data-kategori="kg" style="--d:0.07s">
+          <div class="ikon tile-2" aria-hidden="true"><re-icon icon="lightning" size="20" color="currentColor"></re-icon></div>
+          <h3>Laundry Kilat 6 Jam</h3>
+          <p>Untuk Anda yang butuh mendadak! Pakaian diproses dengan prioritas tertinggi dan selesai dalam 6 jam sejak diterima. Cocok untuk seragam kerja, pakaian acara, atau keperluan travelling yang tak tertunda.</p>
+          <span class="harga-chip">Rp12.000 / kg</span>
+        </div>
+        <div class="card reveal" data-kategori="pcs" style="--d:0.14s">
+          <div class="ikon tile-5" aria-hidden="true"><re-icon icon="tag-price" size="20" color="currentColor"></re-icon></div>
+          <h3>Dry Clean (Cuci Kering)</h3>
+          <p>Perawatan khusus untuk pakaian premium seperti jas, gaun pesta, kebaya, blazer, dan batik sutra. Menggunakan pelarut kimia khusus tanpa air sehingga bentuk, warna, dan serat kain tetap terjaga sempurna.</p>
+          <span class="harga-chip">Rp25.000 / pcs</span>
+        </div>
+        <div class="card reveal" data-kategori="pcs" style="--d:0s">
+          <div class="ikon tile-3" aria-hidden="true"><re-icon icon="shopping-bag" size="20" color="currentColor"></re-icon></div>
+          <h3>Cuci Sepatu &amp; Tas</h3>
+          <p>Pembersihan mendalam untuk sepatu sneakers, kulit, kanvas, hingga tas ransel. Menggunakan siklus halus, deep cleaning pada sol, dan pengeringan alami agar bentuk tidak berubah dan warna tetap cerah.</p>
+          <span class="harga-chip">Rp20.000 / pasang</span>
+        </div>
+        <div class="card reveal" data-kategori="kg" style="--d:0.07s">
+          <div class="ikon tile-8" aria-hidden="true"><re-icon icon="bed" size="20" color="currentColor"></re-icon></div>
+          <h3>Cuci Karpet &amp; Bed Cover</h3>
+          <p>Layanan berat untuk tekstil besar seperti karpet, bed cover, selimut tebal, dan tirai. Dihitung per satuan dengan mesin kapasitas besar sehingga hasilnya lebih bersih, ringan, dan bebas tungau.</p>
+          <span class="harga-chip">Rp15.000 / kg</span>
+        </div>
+        <div class="card reveal" data-kategori="gratis" style="--d:0.14s">
+          <div class="ikon tile-4" aria-hidden="true"><re-icon icon="scooter" size="20" color="currentColor"></re-icon></div>
+          <h3>Antar-Jemput Gratis</h3>
+          <p>Kenyamanan maksimal tanpa keluar rumah. Kurir kami menjemput pakaian sesuai jadwal yang Anda tentukan dan mengantarkannya kembali tepat waktu. Gratis untuk area layanan dengan minimal transaksi tertentu.</p>
+          <span class="harga-chip">Gratis*</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KALKULATOR ESTIMASI HARGA (DINAMIS) ============ -->
+  <section class="section section-alt" id="kalkulator" aria-labelledby="jdKalk">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="badge">Fitur Baru Tugas 2</span>
+        <h2 id="jdKalk">Kalkulator Estimasi Harga</h2>
+        <p class="deskripsi">
+          Tidak perlu lagi menebak-necek biaya sebelum memesan. Pilih layanan, masukkan jumlah pakaian, dan kalkulator ini akan menghitung estimasi biaya secara langsung — lengkap dengan diskon member 10% untuk layanan reguler, status antar-jemput, serta perkiraan tanggal selesai yang diperbarui otomatis. Setelah angka muncul, Anda bisa langsung melanjutkan pemesanan ke WhatsApp dengan satu tombol.
+        </p>
+      </div>
+
+      <div class="kalkulator reveal">
+        <form class="kalk-form" id="kalkForm" aria-label="Form kalkulator estimasi harga" onsubmit="return false;">
+          <h3><re-icon icon="calculator5" size="18" color="currentColor"></re-icon>Hitung Estimasi Anda</h3>
+
+          <div class="field">
+            <label for="kalkLayanan">Pilih Layanan</label>
+            <select class="select" id="kalkLayanan"></select>
+          </div>
+
+          <div class="field">
+            <label for="kalkJumlah">Jumlah <span id="kalkUnit">(kg)</span></label>
+            <input class="input" type="number" id="kalkJumlah" value="4" min="0.5" step="0.5" inputmode="decimal" required>
+            <p class="unit-hint" id="kalkHintSatuan">Untuk satuan kilogram, Anda bisa memasukkan angka dengan koma 0,5 (misalnya 4,5 kg).</p>
+          </div>
+
+          <label class="switch-row" for="kalkAntar">
+            <span class="switch-text"><b>Antar-Jemput</b><small>Gratis untuk transaksi min. Rp30.000, radius 5 km</small></span>
+            <span class="switch"><input type="checkbox" id="kalkAntar"><span class="track"></span><span class="thumb"></span></span>
+          </label>
+          <p class="kalk-hint" id="hintAntar"><re-icon icon="alert-triangle" size="15" color="currentColor"></re-icon><span>Estimasi Anda masih di bawah minimum Rp30.000 sehingga antar-jemput gratis belum berlaku — kurir tetap bisa diatur dengan konfirmasi admin.</span></p>
+
+          <label class="switch-row" for="kalkMember">
+            <span class="switch-text"><b>Member Sparkleen</b><small>Diskon 10% untuk layanan reguler</small></span>
+            <span class="switch"><input type="checkbox" id="kalkMember"><span class="track"></span><span class="thumb"></span></span>
+          </label>
+          <p class="kalk-hint" id="hintMember"><re-icon icon="alert-triangle" size="15" color="currentColor"></re-icon><span>Diskon member hanya berlaku untuk layanan reguler (cuci kering setrika, setrika saja, dan cuci karpet). Pilih layanan reguler untuk mengaktifkan diskon.</span></p>
+        </form>
+
+        <div class="kalk-result" aria-live="polite" aria-label="Hasil estimasi harga">
+          <div class="result-rows">
+            <div class="result-row"><span>Layanan</span><b id="rLayanan">—</b></div>
+            <div class="result-row"><span>Jumlah</span><b id="rJumlah">—</b></div>
+            <div class="result-row"><span>Harga satuan</span><b id="rSatuan">—</b></div>
+            <div class="result-row"><span>Subtotal</span><b id="rSubtotal">—</b></div>
+            <div class="result-row diskon" id="barisDiskon" style="display:none"><span>Diskon member 10%</span><b id="rDiskon">—</b></div>
+            <div class="result-row antar" id="barisAntar" style="display:none"><span>Antar-jemput</span><b id="rAntar">—</b></div>
+          </div>
+          <div class="result-total">
+            <span class="lbl">Total estimasi</span>
+            <span class="val" id="rTotal">—</span>
+          </div>
+          <p class="result-est" id="rEst">—</p>
+          <a class="btn btn-wa" id="kalkWa" href="#" target="_blank" rel="noopener">
+            <re-icon icon="chat-round-call" size="18" color="currentColor" aria-hidden="true"></re-icon>
+            Pesan via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TABEL HARGA ============ -->
+  <section class="section" aria-labelledby="jdTarif">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="badge">Rincian Tarif</span>
+        <h2 id="jdTarif">Daftar Harga Layanan</h2>
+        <p class="deskripsi">
+          Transparansi harga adalah komitmen kami. Tidak ada biaya tersembunyi atau penyesuaian mendadak setelah pakaian ditimbang. Berikut tabel daftar harga resmi yang berlaku di seluruh cabang Sparkleen Laundry. Untuk pelanggan yang mendaftar sebagai member, tersedia diskon tambahan 10% untuk semua layanan reguler serta prioritas penjadwalan antar-jemput pada jam sibuk.
+        </p>
+      </div>
+      <div class="tabel-wrap reveal">
+        <table>
+          <caption class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">Daftar harga layanan Sparkleen Laundry</caption>
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Jenis Layanan</th>
+              <th scope="col">Waktu Pengerjaan</th>
+              <th scope="col">Tarif</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Cuci Kering Setrika Reguler</td><td>2 Hari</td><td class="harga-cell">Rp6.000 / kg</td></tr>
+            <tr><td>2</td><td>Laundry Kilat</td><td>6 Jam</td><td class="harga-cell">Rp12.000 / kg</td></tr>
+            <tr><td>3</td><td>Dry Clean (Jas, Gaun, Kebaya)</td><td>3 Hari</td><td class="harga-cell">Rp25.000 / pcs</td></tr>
+            <tr><td>4</td><td>Cuci Sepatu</td><td>2 Hari</td><td class="harga-cell">Rp20.000 / pasang</td></tr>
+            <tr><td>5</td><td>Cuci Tas</td><td>3 Hari</td><td class="harga-cell">Rp25.000 / pcs</td></tr>
+            <tr><td>6</td><td>Cuci Bed Cover (King)</td><td>3 Hari</td><td class="harga-cell">Rp45.000 / pcs</td></tr>
+            <tr><td>7</td><td>Cuci Karpet</td><td>4 Hari</td><td class="harga-cell">Rp15.000 / kg</td></tr>
+            <tr><td>8</td><td>Setrika Saja</td><td>1 Hari</td><td class="harga-cell">Rp4.000 / kg</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ (AKORDEON DINAMIS) ============ -->
+  <section class="section section-alt" aria-labelledby="jdFaq">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="badge">Tanya Jawab</span>
+        <h2 id="jdFaq">Pertanyaan yang Sering Diajukan</h2>
+        <p class="deskripsi">Klik setiap pertanyaan untuk membuka jawabannya. Semua jawaban disusun berdasarkan pengalaman kami melayani ribuan pesanan selama ini.</p>
+      </div>
+      <div class="acc reveal" style="max-width: 760px; margin-inline: auto;">
+        <div class="acc-item">
+          <button type="button" class="acc-btn" aria-expanded="false">Berapa lama pakaian saya selesai diproses?<span class="acc-icon" aria-hidden="true">+</span></button>
+          <div class="acc-panel"><div><p>Layanan reguler selesai dalam dua hari kerja, layanan kilat selesai dalam 6 jam sejak pakaian diterima, dry clean dan cuci tas membutuhkan tiga hari, cuci sepatu dua hari, dan cuci karpet hingga empat hari karena melibatkan pengeringan yang lebih lama. Waktu mulai dihitung sejak pakaian diterima oleh tim outlet, bukan sejak pemesanan dibuat, sehingga Anda bisa memperkirakan tanggal pengambilan dengan akurat.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button type="button" class="acc-btn" aria-expanded="false">Apakah layanan antar-jemput benar-benar gratis?<span class="acc-icon" aria-hidden="true">+</span></button>
+          <div class="acc-panel"><div><p>Ya, benar. Layanan antar-jemput gratis berlaku untuk transaksi minimal Rp30.000 dalam radius 5 kilometer dari outlet kami. Jika lokasi Anda berada di luar radius tersebut, kurir tetap bisa melayani dengan biaya tambahan yang akan diinformasikan terlebih dahulu sebelum penjemputan, sehingga tidak ada kejutan biaya di kemudian hari.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button type="button" class="acc-btn" aria-expanded="false">Bagaimana jika ada pakaian yang rusak atau hilang?<span class="acc-icon" aria-hidden="true">+</span></button>
+          <div class="acc-panel"><div><p>Setiap pakaian dicatat jumlah dan kondisinya pada nota digital saat diterima, sehingga kelengkapan bisa diperiksa ulang saat pengembalian. Apabila terbukti ada kerusakan akibat kelalaian proses kami, kami akan bertanggung jawab sesuai ketentuan ganti rugi yang berlaku, dan proses klaim bisa dilakukan maksimal 24 jam setelah pakaian diterima. Selama ini, ketelitian pencatatan membuat kasus salah antar nyaris tidak pernah terjadi.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button type="button" class="acc-btn" aria-expanded="false">Metode pembayaran apa saja yang tersedia?<span class="acc-icon" aria-hidden="true">+</span></button>
+          <div class="acc-panel"><div><p>Kami menerima pembayaran tunai di outlet, QRIS dari semua e-wallet dan mobile banking, serta transfer bank. Pembayaran bisa dilakukan saat pakaian diantar kembali atau saat pengambilan di tempat. Untuk pelanggan langganan seperti kos-kosan dan katering, tersedia juga sistem pembayaran mingguan yang lebih praktis.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button type="button" class="acc-btn" aria-expanded="false">Apakah deterjen yang dipakai aman untuk kulit sensitif dan bayi?<span class="acc-icon" aria-hidden="true">+</span></button>
+          <div class="acc-panel"><div><p>Kami hanya menggunakan deterjen premium kelas hipoalergenik yang telah teruji dermatologis, aman untuk kulit sensitif maupun pakaian bayi. Pakaian bayi diproses di jalur terpisah tanpa dicampur pakaian pelanggan lain, dan tanpa pewangi kuat kecuali Anda memintanya. Jika ada kebutuhan khusus seperti bebas pewangi sama sekali, cukup sampaikan pada catatan pemesanan.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button type="button" class="acc-btn" aria-expanded="false">Bagaimana cara klaim garansi cuci ulang?<span class="acc-icon" aria-hidden="true">+</span></button>
+          <div class="acc-panel"><div><p>Garansi cuci ulang berlaku apabila hasil pencucian tidak memenuhi standar kebersihan kami, misalnya masih ada noda yang seharusnya bisa dihilangkan atau bau yang tidak hilang. Klaim bisa diajukan maksimal 24 jam setelah pakaian diterima melalui WhatsApp dengan menyertakan foto pakaian bersangkutan. Tim kami akan memverifikasi dan mencuci ulang tanpa biaya segera di jadwal prioritas.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KETENTUAN ============ -->
+  <section class="section" aria-labelledby="jdKetentuan">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="badge">Informasi Penting</span>
+        <h2 id="jdKetentuan">Ketentuan &amp; Garansi Layanan</h2>
+        <p class="deskripsi">
+          Agar kerja sama kita berjalan lancar dan saling memahami, kami menerapkan beberapa ketentuan sederhana. Pertama, setiap pakaian yang masuk akan dicatat jumlahnya pada nota digital yang dikirim melalui WhatsApp, sehingga Anda dapat memeriksa kelengkapan saat pengembalian. Kedua, pakaian yang mengandung noda membandel seperti tinta, darah, atau cat sebaiknya diinformasikan sebelumnya agar tim kami dapat menyiapkan perawatan khusus yang sesuai. Ketiga, untuk layanan antar-jemput gratis berlaku minimal transaksi Rp30.000 dalam radius 5 kilometer dari outlet kami. Terakhir, garansi cuci ulang berlaku apabila hasil pencucian tidak memenuhi standar kebersihan kami, dan klaim dapat diajukan maksimal 24 jam setelah pakaian diterima. Dengan ketentuan yang jelas ini, kami berkomitmen memberikan pengalaman laundry terbaik tanpa keraguan dan tanpa drama.
+        </p>
+        <div style="margin-top: 28px;">
+          <a href="kontak.html" class="btn btn-primary">Pesan Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo"><span class="logo-mark" aria-hidden="true"><re-icon icon="washer" size="20" color="currentColor"></re-icon></span> Sparkleen<span class="logo-accent">Laundry</span></div>
+      <p>Jasa laundry kilat, bersih, dan terpercaya untuk kebutuhan pakaian Anda sehari-hari.</p>
+      <nav class="footer-nav" aria-label="Navigasi footer">
+        <a href="index.html">Beranda</a>
+        <a href="layanan.html">Layanan</a>
+        <a href="tentang.html">Tentang Kami</a>
+        <a href="tips.html">Tips &amp; Perawatan</a>
+        <a href="kontak.html">Kontak</a>
+        <a href="pemesanan.html">Form Pemesanan</a>
+        <a href="daftar_pesanan.php">Daftar Pesanan</a>
+      </nav>
+      <p class="copyright">&copy; <span id="tahunFooter">2026</span> Sparkleen Laundry — Tugas 2 Web Programming (Konten Dinamis) | Kelompok Ganjil — TI C</p>
+    </div>
+  </footer>
+
+  <button type="button" class="to-top" id="toTop" aria-label="Kembali ke atas halaman">
+    <re-icon icon="arrow-up" size="17" color="currentColor" aria-hidden="true"></re-icon>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

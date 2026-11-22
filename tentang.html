@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami - Sparkleen Laundry | Jasa Laundry Kilat</title>
+  <meta name="description" content="Perjalanan Sparkleen Laundry dari satu mesin cuci di garasi rumah menjadi layanan laundry terpercaya dengan ribuan pelanggan. Kenali sejarah, visi misi, dan alur kerja kami.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a67d6'/%3E%3Cg fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='13' y='13' width='38' height='38' rx='6'/%3E%3Ccircle cx='32' cy='37' r='9'/%3E%3Ccircle cx='21' cy='21' r='2' fill='white' stroke='none'/%3E%3C/g%3E%3C/svg%3E">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("sparkleen-theme"); } catch (e) {}
+      if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      document.documentElement.classList.add("js");
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/reicon/cdn/reicon.js"></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#konten">Langsung ke konten utama</a>
+
+  <!-- ============ LATAR DITHER PIKSEL (inspirasi andreas.vision) ============ -->
+  <div class="page-bg" aria-hidden="true">
+    <div class="pg-cloud pg-cloud-1"></div>
+    <div class="pg-cloud pg-cloud-2"></div>
+    <div class="pg-dither pg-dither-halus"></div>
+    <div class="pg-dither pg-dither-kasar"></div>
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar" id="navbar" aria-label="Navigasi utama">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Sparkleen Laundry — kembali ke beranda">
+        <span class="logo-mark" aria-hidden="true"><re-icon icon="washer" size="20" color="currentColor"></re-icon></span>
+        Sparkleen<span class="logo-accent">Laundry</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="layanan.html">Layanan</a></li>
+        <li><a href="tentang.html" class="aktif" aria-current="page">Tentang Kami</a></li>
+        <li><a href="tips.html">Tips &amp; Perawatan</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+        <li><a href="pemesanan.html">Form Pemesanan</a></li>
+        <li><a href="daftar_pesanan.php">Daftar Pesanan</a></li>
+      </ul>
+      <div class="nav-actions">
+        <span class="status-pill nav-status" id="statusPill" aria-live="polite"></span>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Ganti mode terang/gelap">
+          <re-icon class="ico-moon" icon="moon" size="16" color="currentColor" aria-hidden="true"></re-icon>
+          <re-icon class="ico-sun" icon="sun" size="16" color="currentColor" aria-hidden="true"></re-icon>
+        </button>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ MENU MOBILE ============ -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Menu navigasi mobile">
+      <ul>
+        <li><a href="index.html"><span class="no">01</span> Beranda</a></li>
+        <li><a href="layanan.html"><span class="no">02</span> Layanan</a></li>
+        <li><a href="tentang.html"><span class="no">03</span> Tentang Kami</a></li>
+        <li><a href="tips.html"><span class="no">04</span> Tips &amp; Perawatan</a></li>
+        <li><a href="kontak.html"><span class="no">05</span> Kontak</a></li>
+        <li><a href="pemesanan.html"><span class="no">06</span> Form Pemesanan</a></li>
+        <li><a href="daftar_pesanan.php"><span class="no">07</span> Daftar Pesanan</a></li>
+      </ul>
+    </nav>
+    <div class="mm-footer">
+      <span class="status-pill" id="statusPillMobile" aria-live="polite"></span>
+      <p>Jasa laundry kilat, bersih, dan terpercaya untuk kebutuhan pakaian Anda sehari-hari.</p>
+    </div>
+  </div>
+
+  <main id="konten">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero alt">
+    <div class="hero-inner">
+      <h1>Tentang <span class="grad">Sparkleen Laundry</span></h1>
+      <p class="subjudul">Perjalanan kami menghadirkan layanan pencucian yang bersih, cepat, dan penuh ketelitian untuk setiap keluarga Indonesia.</p>
+    </div>
+  </header>
+
+  <!-- ============ SEJARAH + TIMELINE ============ -->
+  <section class="section" aria-labelledby="jdSejarah">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="badge">Cerita Kami</span>
+        <h2 id="jdSejarah">Sejarah Berdirinya Sparkleen Laundry</h2>
+        <p class="deskripsi">
+          Sparkleen Laundry bermula dari sebuah pengamatan sederhana di tahun 2020. Pendiri kami melihat banyak tetangga dan rekan kerja yang kesulitan mengatur waktu untuk mencuci pakaian di tengah rutinitas yang padat. Ada yang terlambat bekerja karena menunggu pakaian kering, ada pula yang terpaksa membeli pakaian baru karena seragam tidak sempat dicuci. Dari situ lahirlah gagasan untuk mendirikan usaha jasa laundry yang tidak hanya bersih, tetapi juga cepat dan mudah diakses siapa saja. Dimulai dari satu mesin cuci di garasi rumah, kami melayani warga sekitar dengan hasil yang selalu konsisten dan pelayanan yang ramah.
+        </p>
+        <p class="deskripsi" style="margin-top: 16px;">
+          Berkat rekomendasi dari mulut ke mulut, pesanan kami terus bertambah dari bulan ke bulan. Dalam waktu dua tahun, Sparkleen Laundry memperluas usahanya dengan menambah mesin cuci industri kapasitas besar, membuka outlet kedua, dan merekrut tim karyawan yang terlatih dalam teknik pencucian berbagai jenis kain. Saat ini kami telah melayani lebih dari lima ribu pelanggan tetap yang terdiri dari keluarga, mahasiswa, profesional muda, hingga mitra usaha seperti hotel kecil, kos-kosan, dan katering. Pertumbuhan ini tidak pernah mengubah prinsip awal kami: setiap pakaian diperlakukan seperti milik keluarga sendiri, dengan ketelitian penuh dari proses pencucian hingga pengemasan akhir.
+        </p>
+      </div>
+
+      <div class="timeline" aria-label="Linimasa perjalanan Sparkleen Laundry">
+        <div class="tl-item reveal" style="--d:0s">
+          <span class="tl-year">2020</span>
+          <h3>Dimulai dari Garasi Rumah</h3>
+          <p>Sparkleen Laundry lahir dengan satu mesin cuci dan tekad melayani warga sekitar Bandung dengan hasil cucian yang konsisten serta pelayanan yang ramah.</p>
+        </div>
+        <div class="tl-item reveal" style="--d:0.08s">
+          <span class="tl-year">2021</span>
+          <h3>Mesin Industri Pertama</h3>
+          <p>Pesanan yang terus bertambah membuat kami menambah mesin cuci industri kapasitas besar bergaya front loading yang lebih bersih dan lebih lembut pada kain.</p>
+        </div>
+        <div class="tl-item reveal" style="--d:0.16s">
+          <span class="tl-year">2022</span>
+          <h3>Outlet Kedua &amp; Tim Baru</h3>
+          <p>Kami membuka outlet kedua dan merekrut tim terlatih, sekaligus meresmikan layanan antar-jemput gratis sebagai layanan andalan kami.</p>
+        </div>
+        <div class="tl-item reveal" style="--d:0.24s">
+          <span class="tl-year">2024</span>
+          <h3>5.000+ Pelanggan Setia</h3>
+          <p>Lebih dari lima ribu keluarga, mahasiswa, profesional, dan mitra usaha seperti kos-kosan serta katering mempercayakan pakaian mereka kepada kami.</p>
+        </div>
+        <div class="tl-item reveal" style="--d:0.32s">
+          <span class="tl-year">Sekarang</span>
+          <h3>Layanan Kilat 6 Jam &amp; Layanan Online</h3>
+          <p>Layanan kilat 6 jam, nota digital via WhatsApp, dan pemesanan online membuat Sparkleen Laundry semakin mudah dijangkau siapa pun, kapan pun.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISI MISI ============ -->
+  <section class="section section-alt" aria-labelledby="jdVM">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="badge">Arah &amp; Tujuan</span>
+        <h2 id="jdVM">Visi dan Misi Kami</h2>
+        <p class="deskripsi">
+          Visi dan misi menjadi pedoman utama dalam setiap keputusan operasional Sparkleen Laundry. Keduanya kami rumitkan secara sederhana agar mudah dipahami oleh seluruh tim, mitra, dan tentu saja pelanggan yang mempercayakan pakaian mereka kepada kami.
+        </p>
+      </div>
+      <div class="visi-misi">
+        <div class="kotak-vm reveal" style="--d:0s">
+          <h3><re-icon icon="compass" size="19" color="currentColor"></re-icon>Visi</h3>
+          <p>Menjadi usaha jasa laundry terdepan di kota kami yang dikenal karena kecepatan pengerjaan, standar kebersihan tertinggi, dan pelayanan pelanggan yang tulus serta profesional, sehingga setiap keluarga dapat hidup lebih praktis tanpa mengorbankan kualitas perawatan pakaian.</p>
+        </div>
+        <div class="kotak-vm reveal" style="--d:0.1s">
+          <h3><re-icon icon="flag3" size="19" color="currentColor"></re-icon>Misi</h3>
+          <ul>
+            <li>Memberikan hasil pencucian yang bersih, wangi, dan higienis pada setiap pesanan tanpa kecuali.</li>
+            <li>Mengutamakan kepuasan pelanggan melalui layanan antar-jemput yang tepat waktu dan ramah.</li>
+            <li>Menggunakan deterjen dan bahan kimia yang aman untuk kulit serta ramah terhadap lingkungan.</li>
+            <li>Mengembangkan usaha secara bertahap dengan membuka outlet baru dan memberdayakan masyarakat lokal.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ALUR KERJA (SEGMENTED CONTROL DINAMIS) ============ -->
+  <section class="section" id="alurInteraktif" aria-labelledby="jdAlur">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="badge">Cara Kami Bekerja</span>
+        <h2 id="jdAlur">Alur Pengerjaan Laundry</h2>
+        <p class="deskripsi">
+          Proses pengerjaan di Sparkleen Laundry mengikuti empat tahapan standar yang dirancang agar setiap pesanan terlacak dan hasilnya selalu konsisten. Seluruh tahapan diawasi oleh kepala outlet dan dicatat dalam sistem sederhana kami, sehingga tidak ada satu pun pakaian pelanggan yang tertukar atau tertinggal. Klik setiap tahap di bawah untuk melihat penjelasan lengkapnya — tahap juga berganti otomatis hingga Anda ikut berinteraksi.
+        </p>
+      </div>
+
+      <div class="segmented reveal" role="group" aria-label="Pilih tahap alur pengerjaan">
+        <button type="button" class="on" aria-pressed="true"><span class="step-no" aria-hidden="true">1</span> Penerimaan</button>
+        <button type="button" aria-pressed="false"><span class="step-no" aria-hidden="true">2</span> Pencucian</button>
+        <button type="button" aria-pressed="false"><span class="step-no" aria-hidden="true">3</span> Setrika</button>
+        <button type="button" aria-pressed="false"><span class="step-no" aria-hidden="true">4</span> Pengiriman</button>
+      </div>
+      <div class="alur-progress reveal" aria-hidden="true"><div class="bar"></div></div>
+      <div class="alur-detail reveal" id="alurDetail" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ============ KOMITMEN ============ -->
+  <section class="section section-alt" aria-labelledby="jdKomitmen">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="badge">Nilai Kami</span>
+        <h2 id="jdKomitmen">Komitmen kepada Pelanggan</h2>
+        <p class="deskripsi">
+          Kami percaya bahwa kepercayaan pelanggan adalah aset paling berharga yang harus terus dijaga. Karena itu, Sparkleen Laundry berkomitmen untuk selalu transparan mengenai harga dan status pengerjaan, tidak pernah menggabungkan pakaian antar pelanggan dalam satu mesin, serta siap mempertanggungjawabkan setiap keluhan yang masuk. Seluruh karyawan kami menjalani pelatihan rutin mengenai teknik pencucian bahan khusus dan etika pelayanan pelanggan. Kami juga terus berinovasi dengan mengganti peralatan secara berkala, mencoba produk pembersih yang lebih ramah lingkungan, dan memperluas jangkauan layanan antar-jemput agar semakin banyak keluarga yang terbantu oleh kehadiran kami. Bagi Sparkleen Laundry, kebersihan bukan sekadar hasil akhir, melainkan janji yang kami tepati setiap hari.
+        </p>
+        <div style="margin-top: 28px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="layanan.html" class="btn btn-primary">Lihat Layanan Kami</a>
+          <a href="kontak.html" class="btn btn-ghost">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo"><span class="logo-mark" aria-hidden="true"><re-icon icon="washer" size="20" color="currentColor"></re-icon></span> Sparkleen<span class="logo-accent">Laundry</span></div>
+      <p>Jasa laundry kilat, bersih, dan terpercaya untuk kebutuhan pakaian Anda sehari-hari.</p>
+      <nav class="footer-nav" aria-label="Navigasi footer">
+        <a href="index.html">Beranda</a>
+        <a href="layanan.html">Layanan</a>
+        <a href="tentang.html">Tentang Kami</a>
+        <a href="tips.html">Tips &amp; Perawatan</a>
+        <a href="kontak.html">Kontak</a>
+        <a href="pemesanan.html">Form Pemesanan</a>
+        <a href="daftar_pesanan.php">Daftar Pesanan</a>
+      </nav>
+      <p class="copyright">&copy; <span id="tahunFooter">2026</span> Sparkleen Laundry — Tugas 2 Web Programming (Konten Dinamis) | Kelompok Ganjil — TI C</p>
+    </div>
+  </footer>
+
+  <button type="button" class="to-top" id="toTop" aria-label="Kembali ke atas halaman">
+    <re-icon icon="arrow-up" size="17" color="currentColor" aria-hidden="true"></re-icon>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
